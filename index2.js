@@ -1,7 +1,10 @@
 const http = require('http');
 
-
-http.createServer((req, resp)=>{
-    resp.write('<h1>hii this is new server 123</h1>');
+// create a function and pass the function as parameter in server
+function testData(req, resp){
+    resp.write('<h1>hii this is new server 12345</h1>');
     resp.end();
-}).listen(1201);
+}
+
+
+http.createServer(testData).listen(1201);
