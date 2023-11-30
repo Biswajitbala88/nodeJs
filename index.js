@@ -9,4 +9,5 @@ let result = arr.filter((item)=>{
     // console.log(item);
     return item>=4;
 })
+// test 123
 console.log(result);
