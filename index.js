@@ -4,9 +4,11 @@
 //     console.log(i);
 // }
 // const app = require('./app');
-const arr=[2,3,4,5,3,4];
-let result = arr.filter((item)=>{
-    // console.log(item);
-    return item>=4;
-})
-console.log(result);
+// const arr=[2,3,4,5,3,4];
+// let result = arr.filter((item)=>{
+//     // console.log(item);
+//     return item>=4;
+// })
+// console.log(result);
+var colors = require('colors');
+console.log('hello'. red);

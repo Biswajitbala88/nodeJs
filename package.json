@@ -1,0 +1,27 @@
+{
+  "name": "nodejstut",
+  "version": "1.0.0",
+  "description": "this is node js tuts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Biswajitbala88/nodeJs.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "tut"
+  ],
+  "author": "Biswajit Bala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Biswajitbala88/nodeJs/issues"
+  },
+  "homepage": "https://github.com/Biswajitbala88/nodeJs#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
