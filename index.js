@@ -10,5 +10,16 @@
 //     return item>=4;
 // })
 // console.log(result);
-var colors = require('colors');
-console.log('hello'. red);
+// var colors = require('colors');
+// console.log('hello'. yellow);
+
+const http = require('http');
+http.createServer((req, resp)=>{
+    resp.writeHead(200, {'Content-Type': 'application/json'});
+    resp.write(JSON.stringify({
+        name: 'Biswajit Bala',
+        email: 'biswajitbala88@gmail.com'
+    }));
+    resp.end();
+
+}).listen(1200);
