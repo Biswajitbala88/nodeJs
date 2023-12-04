@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('', (req, resp)=>{
-    resp.send('this is home page');
+    resp.send('this is home page '+ req.query.name);
 });
 
 app.get('/about', (req, resp)=>{
