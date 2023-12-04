@@ -1,16 +1,10 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
+const publicPath = path.join(__dirname, 'public')
+// console.log(publicPath);
 
-app.get('', (req, resp)=>{
-    resp.send('this is home page '+ req.query.name);
-});
-
-app.get('/about', (req, resp)=>{
-    resp.send('this is about page');
-});
-
-app.get('/contact', (req, resp)=>{
-    resp.send('this is contact page');
-});
+app.use(express.static(publicPath));
 
 app.listen(1200);
