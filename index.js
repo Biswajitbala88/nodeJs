@@ -1,23 +1,16 @@
-// npx kill-port 1200
+const express = require('express');
+const app = express();
 
-// for(i=0;i<=10;i++){
-//     console.log(i);
-// }
-// const app = require('./app');
-// const arr=[2,3,4,5,3,4];
-// let result = arr.filter((item)=>{
-//     // console.log(item);
-//     return item>=4;
-// })
-// console.log(result);
-// var colors = require('colors');
-// console.log('hello'. yellow);
+app.get('', (req, resp)=>{
+    resp.send('this is home page');
+});
 
-const http = require('http');
-const data  = require('./data');
-http.createServer((req, resp)=>{
-    resp.writeHead(200, {'Content-Type': 'application/json'});
-    resp.write(JSON.stringify(data));
-    resp.end();
+app.get('/about', (req, resp)=>{
+    resp.send('this is about page');
+});
 
-}).listen(1200);
+app.get('/contact', (req, resp)=>{
+    resp.send('this is contact page');
+});
+
+app.listen(1200);
