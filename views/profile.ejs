@@ -5,6 +5,7 @@
     <title>Profile</title>
 </head>
 <body>
+    <%- include('common/header') %>
     <h1><u>Profile Page</u></h1>
     <h3>Name: <%= data.name %></h3>
     <h3>Email: <%= data.email %></h3>
@@ -13,5 +14,7 @@
             <li><%= item %></li>
         <% }) %>
     </ul>
+    <%- include('common/footer') %>
+
 </body>
 </html>
