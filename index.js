@@ -14,7 +14,8 @@ app.get('', (__, resp)=>{
 app.get('/profile', (__, resp)=>{
     const data = {
         name: 'Biswajit Bala',
-        email: 'email@gmail.com'
+        email: 'email@gmail.com',
+        skills: ['node', 'php', 'html']
     }
     resp.render('profile',{data});
 });

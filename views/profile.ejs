@@ -8,5 +8,10 @@
     <h1><u>Profile Page</u></h1>
     <h3>Name: <%= data.name %></h3>
     <h3>Email: <%= data.email %></h3>
+    <ul>
+        <% data.skills.forEach((item)=>{ %>
+            <li><%= item %></li>
+        <% }) %>
+    </ul>
 </body>
 </html>
