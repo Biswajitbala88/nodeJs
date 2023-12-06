@@ -14,14 +14,14 @@ const reqFilter = (req, resp, next)=>{
     }
     
 }
-app.use(reqFilter);
+// app.use(reqFilter);
 
 // app.use(express.static(publicPath));
 
 app.get('', (__, resp)=>{
     resp.sendFile(`${publicPath}/home.html`)
 });
-app.get('/profile', (__, resp)=>{
+app.get('/profile', reqFilter, (__, resp)=>{
     const data = {
         name: 'Biswajit Bala',
         email: 'email@gmail.com',
@@ -29,7 +29,7 @@ app.get('/profile', (__, resp)=>{
     }
     resp.render('profile',{data});
 });
-app.get('/about', (__, resp)=>{
+app.get('/about', reqFilter, (__, resp)=>{
     resp.sendFile(`${publicPath}/about.html`)
 });
 app.get('*', (__, resp)=>{
