@@ -6,6 +6,16 @@ const publicPath = path.join(__dirname, 'public');
 app.set('view engine', 'ejs');
 // console.log(publicPath);
 
+const reqFilter = (req, resp, next)=>{
+    if(req.query.type == 'admin'){
+        next();
+    }else{
+        resp.send('only admin can access');
+    }
+    
+}
+app.use(reqFilter);
+
 // app.use(express.static(publicPath));
 
 app.get('', (__, resp)=>{
