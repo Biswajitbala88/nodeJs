@@ -1,19 +1,14 @@
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
+const reqFilter = require('./middleware');
+
 const app = express();
 const publicPath = path.join(__dirname, 'public');
 app.set('view engine', 'ejs');
 // console.log(publicPath);
 
-const reqFilter = (req, resp, next)=>{
-    if(req.query.type == 'admin'){
-        next();
-    }else{
-        resp.send('only admin can access');
-    }
-    
-}
+
 // app.use(reqFilter);
 
 // app.use(express.static(publicPath));
