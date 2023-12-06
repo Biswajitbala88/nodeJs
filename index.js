@@ -11,23 +11,34 @@ app.set('view engine', 'ejs');
 
 // app.use(reqFilter);
 
+// Create a router instance
+const router = express.Router();
+
+// Apply the middleware to the router
+router.use(reqFilter);
+
 // app.use(express.static(publicPath));
 
 app.get('', (__, resp)=>{
     resp.sendFile(`${publicPath}/home.html`)
 });
-app.get('/profile', reqFilter, (__, resp)=>{
+router.get('/profile', (_, resp) => {
     const data = {
         name: 'Biswajit Bala',
         email: 'email@gmail.com',
         skills: ['node', 'php', 'html']
-    }
-    resp.render('profile',{data});
+    };
+    resp.render('profile', { data });
 });
-app.get('/about', reqFilter, (__, resp)=>{
+router.get('/about', (__, resp)=>{
     resp.sendFile(`${publicPath}/about.html`)
 });
+app.use('/', router);
+
 app.get('*', (__, resp)=>{
     resp.sendFile(`${publicPath}/page_not_found.html`)
 });
-app.listen(1200);
+
+app.listen(1200, () => {
+    console.log('Server is running on port 1200');
+});
