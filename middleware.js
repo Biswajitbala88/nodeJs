@@ -10,3 +10,8 @@ module.exports = reqFilter;
 
 
 // If you were to use app.use('/myroutes', router);, for example, all the routes defined within the router instance would become accessible under the '/myroutes' path. For instance, the /profile route would then be accessed via http://yourdomain.com/myroutes/profile.
+
+// If you were to use app.use('/myroutes', router);, for example, all the routes defined within the router instance would become accessible under the '/myroutes' path. For instance, the /profile route would then be accessed via http://yourdomain.com/myroutes/profile.
+
+
+// If you were to use app.use('/myroutes', router);, for example, all the routes defined within the router instance would become accessible under the '/myroutes' path. For instance, the /profile route would then be accessed via http://yourdomain.com/myroutes/profile.
