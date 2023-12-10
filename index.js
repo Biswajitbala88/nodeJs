@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
 const reqFilter = require('./middleware');
+const dbconnect = require('./mongodb');
 
 const app = express();
 const publicPath = path.join(__dirname, 'public');
@@ -42,4 +43,12 @@ app.get('*', (__, resp)=>{
 app.listen(1200, () => {
     console.log('Server is running on port 1200');
 });
+
+
+const main = async ()=>{
+    let data = await dbconnect();
+    data = await data.find().toArray();
+    console.log(data);
+}
+main();
 
