@@ -3,6 +3,7 @@ const path = require('path');
 const ejs = require('ejs');
 const reqFilter = require('./middleware');
 const dbconnect = require('./mongodb');
+const mongodb = require('mongodb');
 
 const app = express();
 const publicPath = path.join(__dirname, 'public');
@@ -56,6 +57,21 @@ app.put('/update', async (req, res) => {
     } catch (err) {
         console.error('Error:', err);
         res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+app.delete('/delete/:id', async (req, resp)=>{
+    try{
+        const db = await dbconnect();
+        const filter = {
+            _id: new mongodb.ObjectId(req.params.id)
+        }
+        // console.log('delete is ', filter);
+
+        const result = await db.deleteOne(filter);
+        console.log('delete is ', result.deletedCount);
+        resp.send(result);
+    } catch (error) {
+        console.log('error is ', error);
     }
 });
 
