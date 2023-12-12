@@ -19,4 +19,17 @@ const inserData = async ()=>{
 
 }
 
-inserData();
+const updateData = async ()=>{
+    const User = mongoose.model('user', userSchema);
+
+    const filter = { name: "Biswajit1234" }; 
+    const update = { $set: { age: 99 } };
+
+    const result = await User.updateOne(filter, update);
+
+    console.log(result);
+
+
+}
+
+updateData();
